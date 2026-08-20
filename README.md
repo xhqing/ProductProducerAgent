@@ -1,3 +1,15 @@
+<div align="center">
+
+<img src="assets/logo.svg" width="640" alt="Wright logo" />
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Stars](https://img.shields.io/github/stars/xhqing/ProductProducerAgent?style=social)
+![Last Commit](https://img.shields.io/github/last-commit/xhqing/ProductProducerAgent)
+![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/ProductProducerAgent.json" alt="Visits/day (14d)" />
+
+</div>
+
 # ProductProducerAgent · Wright
 
 > **数字产品制作人** — 把机会研判变成可售卖的成品数字产品。
