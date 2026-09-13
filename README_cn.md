@@ -17,7 +17,7 @@
 
 **拟人名 / Persona：Wright**（制造者 · 把想法做成成品）
 
-[简体中文](README_cn.md)
+[English](README.md)
 
 ---
 
@@ -25,25 +25,20 @@
 
 照 Scout 的《机会研判报告》，产出成品数字产品（prompt 包 / 模板 / ebook / 素材包 / 小工具）+《产品说明》（含 `product_id`、建议定价、交付方式）。
 
-Builds finished digital products (prompt packs / templates / ebooks / asset packs / small tools) plus a *Product Spec* (with `product_id`, suggested pricing, delivery) based on Scout's Opportunity Brief.
-
 ## 在流水线中的位置 / Pipeline position
 
 ① Scout 研判 → ② **Wright** 生产 → ③ Buzz 引流 → ④ Vendy 成交 → ⑤ Echo 复盘
 
-## Built-in capabilities
+## 内置能力 / Built-in skills
 
-Common capabilities (anysearch, find-skill, etc.) are not duplicated in this repo; they are distributed via the `claude/` mirror of [CapabilityManagerAgent](https://github.com/xhqing/CapabilityManagerAgent) — clone that repo to get all shared capabilities.
+通用能力（anysearch、find-skill 等）不在本仓库放副本，统一经 [CapabilityManagerAgent](https://github.com/xhqing/CapabilityManagerAgent) 的 `claude/` 镜像分发，clone 该仓库即得全部通用能力。
 
 ## 约束 / Constraints
 
 只做被动收入形态（排除课程 / 服务 / 代运营）；中间产物放 `tmp/`，成品进 `artifacts/`。
 
-Passive-income products only (no courses / services / agency work); intermediate artifacts go to `tmp/`, finished products to `artifacts/`.
+## 版权与署名
 
-## License & Attribution
-
-- Copyright (c) 2026 All Contributors. Licensed under [MIT](LICENSE.md).
-- When referencing this project, please keep the copyright notice and cite the source.
-- Project URL: <https://github.com/xhqing/ProductProducerAgent>
-
+- 版权所有 `Copyright (c) 2026 All Contributors`，许可证为 [MIT](LICENSE.md)。
+- 引用本项目时，请保留版权声明并注明来源。
+- 项目地址：<https://github.com/xhqing/ProductProducerAgent>

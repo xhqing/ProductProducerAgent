@@ -18,7 +18,7 @@ __pycache__/
 .claude/.memory-changed-this-session
 .claude/.last-memory-checkpoint
 
-# 临时产物（见 .claude/rules/tmp-dir-for-artifacts.md）
+# 临时产物（见 CLAUDE.md「你的约束 → 临时产物放 tmp/」）
 tmp/
 
 
