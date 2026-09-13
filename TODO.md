@@ -6,9 +6,9 @@
 
 ### 流水线任务（来自 Scout）
 
-- [ ] **T1** **生产 Team Playbook（Agent Team Playbook 智能体团队作战手册）**——按 Scout《机会研判报告》v3.1 执行（记录：2026-08-20 22:43；2026-08-21 20:05 产品名 Fleet → Team、product_id 同步改；2026-09-13 13:40 素材源路径修正）：
+- [ ] **T1** **生产 Team Playbook（Agent Team Playbook 智能体团队作战手册）**——按 Scout《机会研判报告》v3.3 执行（记录：2026-08-20 22:43；2026-08-21 20:05 产品名 Fleet → Team、product_id 同步改；2026-09-13 13:40 素材源路径修正；2026-09-14 报告 v3.1 → v3.3——团队规模 14 → 20、去 Claude Code 绑定通称 AI agents，规格细节以报告全文为准）：
 
-  - **报告位置（唯一权威输入）**：`/Users/xhq/Developer/ProductStrategistAgent/docs/product/hot-trend-ai-agent-money-system.md`（v3.1，`product_id: Team-Playbook-v3`；产品 2026-08-21 定名 The Agent Team Playbook，见报告 §0 定名说明——原拟名 Fleet Playbook 弃用）。生产前**通读全文**，重点 §4（生产规格）、§7（内容红线）、§9（追溯标签）。
+  - **报告位置（唯一权威输入）**：`/Users/xhq/Developer/ProductStrategistAgent/docs/product/hot-trend-ai-agent-money-system.md`（现 v3.3，`product_id: Team-Playbook-v3`；产品 2026-08-21 定名 The Agent Team Playbook，见报告 §0 定名说明——原拟名 Fleet Playbook 弃用）。生产前**通读全文**，重点 §4（生产规格）、§7（内容红线）、§9（追溯标签）。
   - **产品形态**：数字手册 + 模板包 + clone 即得整合包三合一，**全英文**，7 个模块（含 §4 第 7 模块 Cross-Harness Portability），文件夹结构照 §4 成品样例。
   - **素材源（可直读，含路径与用途）**：
     - `/Users/xhq/Developer/ProductStrategistAgent/`（Scout 本项目）：角色化 CLAUDE.md 五段式样板（`CLAUDE.md`——「你是谁 / 产物契约 / 工具 / 约束 / 流水线位置」）+ 真实踩坑沉淀成硬约束的案例（同文件「## 你的约束」章节——《可用销售与引流渠道》《聚焦被动收入》两份规则；原独立文件 `.claude/rules/available-channels.md` 已于 2026-09-13 并入此处，勿再找旧路径；§4 模块 3 的活教材）。
