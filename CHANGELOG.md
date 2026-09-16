@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+### 新增（CLAUDE.md「完成即交接」规则：产品完成即自动向下游移交，不再等提醒）
+
+- **为什么改**：用户要求「下次交接动作要自动完成，不要我提醒」。2026-09-16 的断链实证：产品 9/13 已完成验收，但产物只存在本仓被 .gitignore 忽略的 `artifacts/`（付费产品不进公开仓库），下游仓里的 GitHub 链接找不到东西，又没有任何主动交接动作，导致 Mason 反馈未收到交接、用户被迫提醒。交接是产品完成的一部分，不是可选步骤。
+- **改了什么**（2026-09-16）：CLAUDE.md「你的产物（产物契约）」节新增「完成即交接」小节：产品完成的当次会话内自动执行四步——打包 zip + 验证、写下游仓被忽略目录的 `handoff.md`、双仓 CHANGELOG 各记一条（付费层细节不入公开明文）、对话报告 ✅ 清单；产品修订发新版重跑；交接对象按注册表六段流水线取直接下游（阵地未建成交 Mason、建成后转 Vendy，以注册表为准）；全程仅本机文件操作不碰 git。
+- **边界**：属流程类规则，无法映射为可检测命令模式（无 hook 能识别「产品完成」语义事件），按元规则豁免工具强制、靠 CLAUDE.md 每次会话加载生效（与超集同步、双语 README 同步同款落法）；本次仅新增规则文本，交接动作本身已于同日前一条目执行完毕。
+
+### 新增（交付实物 zip 打包 + Wright→Mason 正式移交，修复交接链路断裂）
+
+- **为什么改**：Mason（SiteBuilderAgent）反馈未收到最新成品数字产品交接。核实属实：成品与《产品说明》9/13 已就绪且 spec 已写明六段流水线中 Mason（建设期）的职责，但从未向 Mason 侧做任何交接动作（SiteBuilderAgent 内无接手记录、无产物路径指引）；且本仓 `.gitignore` 整体忽略 `artifacts/`（付费产品不进公开仓库，有意为之），Mason 无从得知产物只存在本机，交接链路断裂。
+- **改了什么**（2026-09-16）：
+  - **打包交付实物 zip**：`artifacts/agent-team-playbook-1.0.0.zip`（70K、20 文件，`unzip -l` 与源目录逐文件比对一致）——spec「交付方式：整个 agent-team-playbook/ 目录打包 zip」的落地实物，供 Mason 上传 Payloadz。
+  - **新建 Mason 侧交接输入**：`SiteBuilderAgent/artifacts/handoff.md`（放在 Mason 仓既有的产物接力忽略目录内，不进公开仓库）——含产物本机路径表、Mason 建设期任务清单、渠道硬约束、严禁推公开仓库警示、交接核对清单；定价等细节引用 spec，不在 handoff 与两仓 CHANGELOG 中重复明文（付费层信息只留在被忽略文件里）。
+  - 同步在 SiteBuilderAgent 的 CHANGELOG 记录 handoff 新增。
+- **边界**：未改动产品任何内容（zip 为纯打包，源目录 20 文件未动）；本次全部动作均为本机文件操作，不涉及 git 提交；handoff.md 归属 Mason 项目，后续是否随建站进展改写由 Mason 自定。
+
 ### 变更（team-playbook-spec 流水线接口对齐六段模型：补 Mason、Vendy 定位改为运营期）
 
 - **为什么改**：spec「流水线接口」段写的还是旧五段模型（「下游：Vendy 拿本说明上架定价；Buzz 拿成品做引流内容」）——全局注册表（权威源）的销售流水线已是六段（Scout → Wright → **Mason** → Buzz → Vendy → Echo）：Mason（SiteBuilderAgent）在 Wright 之后、Buzz 之前建成交基础设施（支付链路配置、落地页），建好把购买链接交 Buzz；Vendy 在 Buzz 之后接运营期（定价执行、履约、售后、对账）。旧表述漏 Mason、且把「上架定价」直接给 Vendy 前置到引流之前，会误导下游交接顺序。用户问「现在可以找 Vendy 了吗」时暴露。
