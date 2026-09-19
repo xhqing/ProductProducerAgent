@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### 变更（GitComic 子项目建仓：产品内容整体迁出，本仓回归多产品制作中枢）
+
+- **为什么改**：用户指令「建立一个子项目，叫做 GitComic，然后把 GitComic 相关的产品内容全部转移过去，这个子项目由你负责」——Git 漫画书是持续性产品线（试读 → 验证 → 全本迭代），独立成仓便于专注制作与追溯。
+- **改了什么**（2026-09-19）：
+  - **建仓迁移**：新仓 `/Users/xhq/Developer/GitComic`（本地 `git init`，未建远程）承接全部 GitComic 内容——`artifacts/` 九项（spec、git-comic-v1 制作资产、4 成品源目录、4 交付 zip）、`tmp/` 工作产物（拆页图 / multifix / p01-p07 备份 / 被取代 zip / agnes 测试图）、`.env`（AGNES_API_KEY，Agnes 管线专属，`src/agnes/` 脚本相对层级不变零修改）、CHANGELOG 历史八节原样迁入、TODO T2（归档）/ T3（气泡审计）迁入并沿用原编号；迁移详情见 GitComic 仓 CHANGELOG 建仓条目。
+  - **引用同步**：Mason 仓 `handoff.md` 产品二节路径改指 GitComic（产品一 playbook 产物仍在本仓）；本仓 CLAUDE.md 新增「子项目清单」节；全局注册表超集映射表加行（CapabilityManagerAgent 镜像同步）。
+  - **TODO 闭环**：T3（气泡归属审计）随产品迁往 GitComic 仓 TODO.md 继续活跃，本仓 TODO-archive 留已迁移指针；本仓后续新编号自 T4 起（T1–T3 已用不复用）。
+- **边界**：本仓 CHANGELOG / TODO 归档历史保留不删（append-only）；Team Playbook（产品一）产物仍在本仓不动；`product_id`（Git-Comic-v1 / Git-Comic-Mini）与产品版本 0.2.1 不变。
+
 ### 变更（0.2.1 未发版追加：全书笔记本盖背统一纯灰，新修 8 页）
 
 - **为什么改**：用户重申「每页笔记本后盖都应是全灰、无色差、同一种灰」，并指出上午只修 p07 后 PDF 里仍五颜六色。重新排查确认真实缺陷面远大于上午结论：agnes 出图时人物总在笔记本后方，读者看到的彩色「屏幕」面板在几何上全是盖背外侧（屏幕内容被画在盖背上），而 VLM 质检把这些面板误判为「正面屏幕朝向读者」而放行——是「agnes 画错 + 质检几何误判」双重问题。
