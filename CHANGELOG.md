@@ -2,6 +2,37 @@
 
 ## [Unreleased]
 
+### 变更（接收 Buzz 越权直改的通报：请求 Wright 复核接管 + 流程约定）
+
+- **为什么改**：Buzz（下游）在用户指令下直接修改了 Wright 的产物（中文版「当小时」→「立即」四处，已重打包 zip）——违反产物契约职责边界；现补做正式通报，请 Wright 复核内容、接管 Payloadz 同步、纳入版本基线。
+- **改了什么**（2026-09-21）：新建 `artifacts/handoff-buzz-wright-registry-fix.md`（直改明细 + 复核请求三项 + 流程约定）。内容修改本身的记录见前两条。
+
+### 变更（「当小时」二次修正为「立即」：消除宽限歧义）
+
+- **为什么改**：用户二次校正——「一小时内」读起来像 SLA 式宽限承诺，但更新注册表是改一行表格的事，纪律本意是「当场就做、别拖」；英文 "the same hour" 语义重心也是紧迫感非宽限。
+- **改了什么**（2026-09-21）：四处「一小时内」统一改「立即」（更新注册表 / 注册 / 立即完成）；源目录与 zh 目录同步，zip 重打包。英文版不动。⚠️ Payloadz 同步提醒同前：旧包仍待 Vendy 重传。
+
+### 变更（中文版「当小时」直译修正为「一小时内」，zip 重打包）
+
+- **为什么改**：用户审阅发现「任何 agent 新建或改名？当小时更新注册表」表达不通——「当小时」是英文 "the same hour" 的生硬直译，非地道中文；共 4 处（02-role-templates / 04-registry-naming 两模块，源目录与 zh 打包目录各一套）。
+- **改了什么**（2026-09-21）：四处统一改「一小时内」（更新注册表 / 注册 / 一小时内完成）；源目录 `agent-team-playbook/` 与打包目录 `agent-team-playbook-zh/` 同步修改，`agent-team-playbook-zh-1.0.0.zip` 删除重打包（22 files 与原版一致）。英文版 "the same hour" 地道不动。**⚠️ 待同步：Payloadz 中文版（2722313）仍是含「当小时」的旧包，需 Vendy 重新上传同版本号新 zip，上架前后两渠道交付物才一致。**
+
+### 新增（T4 完成：美国麻将双语 Playbook 生产 + 交接待交付）
+
+- **为什么改**：T4 流水线任务——Scout 研判美国麻将热潮（`trend_mahjong_us_boom`），按其主推候选 A 生产双语产品：英文主品对准「新手到主办第一场麻将局」空档（避开 Etsy 速查表红海），中文版面向在美华人 / 留学生的「会打中国麻将学美国麻将」对照角度。
+- **改了什么**（2026-09-21）：
+  - **英文主品** `product_am_mahjong_playbook`：《The American Mahjong Playbook》22 页 A4 PDF（牌面图解用 Unicode 真实牌符 → 年度卡五要素读卡法 → 一局流程 → Charleston ROLLOR 分步 → Joker 全规则 → 十大新手错误 → **How to Host Your First Mahjong Night** 装备采购表 + 2.5 小时教学局时刻表）+ 单页 A4 速查表附赠件；书籍级排版（封面 / 分章分页 / 毡绿色系）。
+  - **中文版** `product_am_mahjong_playbook_cn`：《美国麻将玩法入门》20 页 A4 PDF（中美核心差异对照表为主菜 + 读卡 + Charleston + Joker + 中国玩家十大坑 + 上桌礼仪与装备 + 术语中英对照）+ 单页速查表。
+  - **规则事实多源交叉核实**（mahjong4friends / bamgoodtime 等，含一处关键修正：NMJL 规则允许弃 Joker 且弃出为死牌——防御性安全弃牌，非传统误传的「禁止弃出」）；Charleston 六步 ROLLOR、盲传仅第 3/6 步、礼貌交换对家 0–3 张、call 仅碰杠五连与胡牌张、赔付三重结构等全部对源。
+  - **验收**：T4 五条验收线全过（英文 write-good 校对无硬伤 + 拼写筛查 + 人工抽读；两速查表 A4 单页；全部产物带 trend_id / product_id）；PDF 像素级排版验证全过（封面麻将字符渲染经墨迹量分布定量验证，非豆腐块）。
+  - **交付**：`artifacts/mahjong/` 下 spec + 两源目录 + 两 zip（en/zh 各 3 文件，MD5 逐文件比对一致）；按「完成即交接」写入 Mason 仓 `handoff.md` 产品三节（含小红书中文链路差异说明），Mason 仓 CHANGELOG 同步记「接收交接输入」。
+- **边界**：NMJL 年度卡具体牌型有版权，全书零复制（组合概念与记法说明属规则性知识）；候选 B（中美双规则对照手册）不在本次范围；定价执行属下游。
+
+### 新增（接 Scout 派单 T4：美国麻将新手 Playbook 双语生产）
+
+- **为什么改**：Scout 完成麻将在美热潮的机会研判（报告：ProductStrategistAgent 仓 `artifacts/mahjong-us-boom-report.md`），用户 2026-09-20 裁定两条链路产品（英文主品 + 中文版）一起生产，按流水线交接机制写入本仓 TODO.md（T4，自 T5 起继续递增）。
+- **改了什么**：`TODO.md` 新增 T4 流水线任务（绿色紧急度 / 流水线任务节）——英文主品 `product_am_mahjong_playbook`（American Mahjong 新手 Playbook + 聚会主办包，$9.99 锚）与中文版 `product_am_mahjong_playbook_cn`（《美国麻将玩法入门》，面向在美华人 / 留学生的「会打中国麻将学美国麻将」对照角度）；任务含唯一权威输入路径、NMJL 牌型版权红线、差异化要求（不做又一张 cheat sheet）、双语验收线、交付位置（本仓 artifacts/mahjong/）与边界（候选 B 不在本任务）。头部编号说明行同步改为「T1–T4 已用，后续自 T5 起」。
+
 ### 变更（GitComic 子项目建仓：产品内容整体迁出，本仓回归多产品制作中枢）
 
 - **为什么改**：用户指令「建立一个子项目，叫做 GitComic，然后把 GitComic 相关的产品内容全部转移过去，这个子项目由你负责」——Git 漫画书是持续性产品线（试读 → 验证 → 全本迭代），独立成仓便于专注制作与追溯。

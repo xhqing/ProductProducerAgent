@@ -46,3 +46,16 @@
   - 0.1.0 遗留变体（`src/pages`，非交付版本）p04 的 Pixi 气泡尾 'tl' 指向空处已确认；其余页未逐一几何复核——若该变体复活使用需先全量审计；
   - 交付版 pages-art 现靠人工 VLM 抽查，建议后续在构建链加一道「气泡尾巴必须指向画面内某角色区域」的自动校验（几何规则或 VLM），新增/改版页面时防回归。
   ✅**已迁移**（迁移：2026-09-19 20:51）——本条仍为**活跃待办**，随 GitComic 子项目建仓迁往 `/Users/xhq/Developer/GitComic` 的 TODO.md 继续跟踪（编号沿用 T3），本条留在本归档仅作指针。
+
+- [ ] **T4** 美国麻将新手 Playbook 双语生产（英文主品 + 中文版一起出，用户 2026-09-20 裁定）（记录：2026-09-20 18:10）
+  - **唯一权威输入**：ProductStrategistAgent 仓 `artifacts/mahjong-us-boom-report.md`（trend_id: trend_mahjong_us_boom）。生产前先通读全文，尤其 §2 关键事实（美国主流玩法是 American Mahjong / NMJL 年度卡规则，不是中国麻将）、§6 盈利模式、§7 两条链路。
+  - **范围（两个产品一起生产）**：
+    1. 英文版主品（product_id: `product_am_mahjong_playbook`）：American Mahjong 新手 Playbook + 聚会主办包——英文 PDF 电子书 + 可打印速查表附赠件，定价锚 $9.99（首发券 $6.99）。内容主体：144 张牌图解 → American 规则分步教学（Charleston、Joker、怎么读年度卡）→ 新手最常犯错误 → How to Host Your First Mahjong Night（聚会主办清单：人数、零食、教学局流程）。速查表是附赠件不是主体。
+    2. 中文版（product_id: `product_am_mahjong_playbook_cn`）：《美国麻将玩法入门》，面向在美华人 / 留学生（链路 2）。角度是「会打中国麻将的人学美国麻将」：对照讲差异（年度卡 vs 开放胡牌、Joker、Charleston），不是从零教麻将。
+  - **合规红线（硬约束）**：NMJL 年度卡片上的具体牌型有版权，产品内一律不得复制；产品定位是「教你读懂官方卡 + 怎么打」，并引导读者去买官方卡（$14，NMJL 官网）。规则、流程、术语本身可以讲。
+  - **差异化要求（避红海）**：Etsy 速查表已红海，不做「又一张 cheat sheet」；主体是「新手到主办第一场麻将局的完整路径」——这是竞品分析确认的空档。
+  - **验收线**：① 英文版：非麻将背景的美国读者 30 分钟内能看懂 Charleston 流程、Joker 用法、怎么读年度卡，host 清单可直接照做办局；② 英文无语法硬伤（校对工具过一遍 + 人工抽读）；③ 中文版：已会中国麻将的读者 20 分钟内理解 American 规则与中国的差异、能上桌跟美国朋友玩；④ 速查表排版 A4 可打印；⑤ 产物文件带 trend_id / product_id 标签（下游归因用）。
+  - **交付位置**：初版产物落本仓 `artifacts/mahjong/`（英文版 + 中文版分文件）；产品线成型后再议是否独立子仓（参照 GitComic 先例，由用户裁定）。
+  - **不在本任务内**：候选 B（中美双规则对照手册 `product_cn_am_dual_rules`）——等本产品验证付费能力后再派；上架与引流属下游 Mason / Buzz / Vendy。
+
+  ✅**已完成**（完成：2026-09-21 19:05）——两产品完成并交付本仓 `artifacts/mahjong/`：英文主品《The American Mahjong Playbook》22 页 PDF + 单页 A4 速查表（含 How to Host 专章：装备采购表 + 2.5 小时教学局时刻表），中文版《美国麻将玩法入门》20 页 PDF + 速查表（中美差异对照表主菜 + 中国玩家十大坑）；规则经多源交叉核实（含关键修正：弃 Joker 为合法但成死牌，非「禁止弃出」）；分语言双 zip（en/zh 各 3 文件，MD5 比对一致）；NMJL 牌型版权红线零连例，三处独立身份声明 + 引导官网购卡；T4 五条验收线全过（write-good 校对无硬伤 + 拼写筛查 + 人工抽读；像素级排版验证含封面麻将字符墨迹分布定量验证）；完成即交接：Mason 仓 handoff.md 产品三节 + 双仓 CHANGELOG 各记一条。详见本仓 CHANGELOG 2026-09-21 条目。
