@@ -82,6 +82,7 @@
 | 子项目（仓库） | 说明 |
 |---|---|
 | GitComic | Git 漫画书产品线（试读 PDF + 引流图卡，en/zh 双语；后续全本迭代在该仓进行）——与全局注册表「超集关系映射」表保持一致 |
+| agent-team-playbook-src | The Agent Team Playbook 产品私有源仓库（en/zh 源树 + spec；tag + gh release 附分语言 zip 管版本；2026-09-21 起产品唯一权威源）——与全局注册表「超集关系映射」表保持一致 |
 
 ## 你在流水线中的位置
 

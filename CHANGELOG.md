@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### 新增（建子仓库 agent-team-playbook-src：Team Playbook 产品独立私有仓 + gh release 版本管理）
+
+- **为什么改**：用户指令——agent-team-playbook 产品需要专门仓库作本仓子项目、由 Wright 负责，用 gh release 做版本管理，且付费产品不能公开。已查实裸名 `agent-team-playbook` 被 Mason 的落地页部署仓占用（公开、GitHub Pages、GA4 与五个短链已挂在 `xhqing.github.io/agent-team-playbook/` 上，改名代价大且无必要），不复用也不让名，新建私有仓 `agent-team-playbook-src`。私有仓 Release 可见性已经官方文档 + 匿名实测确认（404，仅协作者可见），可安全存付费内容。
+- **改了什么**（2026-09-21）：
+  - 新建 `xhqing/agent-team-playbook-src`（私有）并 `git init`（main）；骨架：双语 README（私有仓声明 / 结构 / 版本管理 / 与落地页仓区分表）、CLAUDE.md（Wright 全文超集 + 指代说明）、VERSION=1.0.0、CHANGELOG（v1.0.0 初始条目）、LICENSE（All Rights Reserved）、.gitignore（tmp/、.DS_Store）；
+  - 产品源迁移（复制不移动）：`artifacts/agent-team-playbook-en/` → `product/en/`、`artifacts/agent-team-playbook-zh/` → `product/zh/`（各 12 文件）、`artifacts/team-playbook-spec.md` → `spec.md`；本仓 artifacts 下原目录原样保留（历史交接文档路径不失效）、不再演进，后续 1.x 迭代在子仓库进行；
+  - 登记三处：本仓 CLAUDE.md 子项目清单加行、全局注册表超集映射表加行（CapabilityManagerAgent 镜像同步）、双 CHANGELOG 记录。
+- **版本管理方式**：VERSION 唯一权威；发版 = tag + gh release 附 `agent-team-playbook-en-<版本>.zip` / `-zh-<版本>.zip` 两个 assets；发布状态以 gh release 实测为准。待用户 /commit（首推）后 /release 发 v1.0.0。
+
 ### 变更（接收 Buzz 越权直改的通报：请求 Wright 复核接管 + 流程约定）
 
 - **为什么改**：Buzz（下游）在用户指令下直接修改了 Wright 的产物（中文版「当小时」→「立即」四处，已重打包 zip）——违反产物契约职责边界；现补做正式通报，请 Wright 复核内容、接管 Payloadz 同步、纳入版本基线。
