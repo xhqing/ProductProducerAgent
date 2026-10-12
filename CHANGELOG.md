@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+### 变更（子项目规则修订：子项目不再携带智能体专属文件；两个子项目随附文件已清理）
+
+- **为什么改**：用户 2026-10-12 修订团队规则——智能体专属文件（`CLAUDE.md` / `AGENTS.md` / `.claude/` / 项目级 `.pi/`）从此只有 Agent 项目允许拥有，非 Agent 项目（含子项目）一律不得存在；后台开启 pi 会话（intercom / agent_call / agent_wake）只能以 Agent 项目根目录为工作目录（细则见全局 `~/.claude/docs/agents-registry.md`「智能体专属文件归属与子项目映射」节）。本项目两个子项目此前按旧「超集」规则随附了本项目的智能体专属文件，需按新规清理。
+- **改了什么**（2026-10-12）：
+  - 本文件「子项目清单」节改为新规表述：去掉旧「超集关系映射」口径，改为子项目不得携带智能体专属文件 + 后台会话以本项目根为工作目录 + 引用全局注册表新节；
+  - 清理 GitComic 随附文件：`CLAUDE.md`、`.claude/`、`.pi/`、`.agents/`、`.codebuddy/`、`.grok/`、`.qoder/`、`.trae/`、`.zcode/`、`skills-lock.json`（GitComic 仓 CHANGELOG 记录删除明细；其 README 中英双语同步更新「制作资产已整目录移除 + 商标纪律」）；
+  - 清理 agent-team-playbook-src 随附文件：`CLAUDE.md`（本文件全文随附 + 仓库说明；仓库说明已由该仓 README 覆盖、无内容损失，该仓 CHANGELOG 记录）；
+  - 三个仓库（本项目 + 两个子项目）CHANGELOG 各记一条；各仓按 `/add` → `/commit` 流程提交。
+
+### 新增（项目级 skill 迁入：byted-ark-seedream-skill——GitComic 插画管线的 Seedream 生图工具）
+
+- **为什么改**：新规清理 GitComic 仓的项目级 skill 时确认该 skill 有持续使用价值——Wright 制作产品（插画 / 底图重绘）会用到；按新规「项目级 skill 归 Agent 项目」，迁入本项目 `.pi/skills/`。
+- **改了什么**（2026-10-12）：新建 `.pi/skills/byted-ark-seedream-skill/`（整目录迁入，14 文件：SKILL.md、references/、scripts/、tests/、package.json；volcengine/agentplan 官方 skill，MIT 许可，v4.0.0）；与 GrowthMarketerAgent 仓同款副本逐字节一致，迁入后 GitComic 侧原目录删除。
+
 ### 新增（建子仓库 agent-team-playbook-src：Team Playbook 产品独立私有仓 + gh release 版本管理）
 
 - **为什么改**：用户指令——agent-team-playbook 产品需要专门仓库作本仓子项目、由 Wright 负责，用 gh release 做版本管理，且付费产品不能公开。已查实裸名 `agent-team-playbook` 被 Mason 的落地页部署仓占用（公开、GitHub Pages、GA4 与五个短链已挂在 `xhqing.github.io/agent-team-playbook/` 上，改名代价大且无必要），不复用也不让名，新建私有仓 `agent-team-playbook-src`。私有仓 Release 可见性已经官方文档 + 匿名实测确认（404，仅协作者可见），可安全存付费内容。

@@ -79,10 +79,10 @@
 
 ## 子项目清单
 
-| 子项目（仓库） | 说明 |
-|---|---|
-| GitComic | Git 漫画书产品线（试读 PDF + 引流图卡，en/zh 双语；后续全本迭代在该仓进行）——与全局注册表「超集关系映射」表保持一致 |
-| agent-team-playbook-src | The Agent Team Playbook 产品私有源仓库（en/zh 源树 + spec；tag + gh release 附分语言 zip 管版本；2026-09-21 起产品唯一权威源）——与全局注册表「超集关系映射」表保持一致 |
+本项目负责的子项目如下（与全局 `~/.claude/docs/agents-registry.md` 的「子项目映射」表保持一致）。**按 2026-10-12 用户修订的新规：智能体专属文件（`CLAUDE.md` / `AGENTS.md` / `.claude/` / 项目级 `.pi/`）只有 Agent 项目允许拥有，子项目一律不得存在；后台开启 pi 会话只能以本 Agent 项目根目录为工作目录**（细则见全局 `~/.claude/docs/agents-registry.md`「智能体专属文件归属与子项目映射」节）。子项目的工作一律在本项目会话里按路径跨目录操作。
+
+- **GitComic**（`/Users/xhq/Developer/GitComic`）：Git 漫画书产品线仓库（试读 PDF + 引流图卡，en/zh 双语；后续全本迭代在该仓进行）；2026-10-12 按新规清理随附的智能体专属文件（`CLAUDE.md`、`.claude/`、`.pi/`、`.agents/` 等 AI 运行时目录 + `skills-lock.json`，其中 `byted-ark-seedream-skill` 迁入本项目 `.pi/skills/`）
+- **agent-team-playbook-src**（`/Users/xhq/Developer/agent-team-playbook-src`）：The Agent Team Playbook 产品私有源仓库（en/zh 源树 + spec；tag + gh release 附分语言 zip 管版本；2026-09-21 起产品唯一权威源）；2026-10-12 按新规清理随附的智能体专属文件（`CLAUDE.md`）
 
 ## 你在流水线中的位置
 
