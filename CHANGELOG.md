@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### 变更（子项目取消：GitComic / agent-team-playbook-src 按 2026-10-14 用户决定不再维护）
+
+- **为什么改**：用户 2026-10-14 决定取消一批子项目、不再维护（全局注册表 `~/.claude/docs/agents-registry.md`「已取消的子项目」条目：本项目名下为 GitComic、agent-team-playbook-src；另有 Atlas / Alfred / Kit 名下若干项目）；口径为「本地项目资料删除、GitHub 远端仓库保留为存档」。本项目「子项目清单」节须与注册表映射保持一致。
+- **改了什么**（2026-10-14）：① 本文件「子项目清单」节移除 GitComic、agent-team-playbook-src 两条目，改写为「暂无子项目」（保留 2026-10-12 新规说明句，写法与 LegalAgent 等项目一致）；② 核查 TODO.md / TODO-archive.md 中涉及两个子项目的条目：无仍活跃条目需归档——现有相关条目均为历史指针 / 已完成条目，按规范保持不动；③ 两个原仓库本地目录（`~/Developer/GitComic`、`~/Developer/agent-team-playbook-src`）由 Kit 统一删除（本项目未操作）；GitHub 远端仓库原样保留为存档（GitComic 含 zh / en-v0.2.2 Releases；playbook 含 v1.0.1 Release 与分语言 zip assets）；④ 两个原仓库此后不再做任何提交 / 维护动作。
+- **边界**：本项目自身能力与结构不变；`byted-ark-seedream-skill`（2026-10-12 自 GitComic 迁入）继续留在本项目 `.pi/skills/`。
+
 ### 变更（子项目规则修订：子项目不再携带智能体专属文件；两个子项目随附文件已清理）
 
 - **为什么改**：用户 2026-10-12 修订团队规则——智能体专属文件（`CLAUDE.md` / `AGENTS.md` / `.claude/` / 项目级 `.pi/`）从此只有 Agent 项目允许拥有，非 Agent 项目（含子项目）一律不得存在；后台开启 pi 会话（intercom / agent_call / agent_wake）只能以 Agent 项目根目录为工作目录（细则见全局 `~/.claude/docs/agents-registry.md`「智能体专属文件归属与子项目映射」节）。本项目两个子项目此前按旧「超集」规则随附了本项目的智能体专属文件，需按新规清理。
