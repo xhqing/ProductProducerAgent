@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### 变更（拟人名更新：playbook 产物中的 Markowitz → Mark）
+
+- **为什么改**：用户 2026-10-17 将量化 agent 拟人名 Markowitz 改为 **Mark**（项目名 QuantStrategistAgent 不变）；Kit 侧巡检通知本项目 playbook 相关产物含旧名。经评估：该产品仍**在售**（Payloadz 商品页与落地页均在线）→ 属现行内容，按指示改名（经核不属于「已定版的存档快照」情形）。
+- **改了什么**（2026-10-17）：三套内容母本共 7 处 `Markowitz` → `Mark`——`artifacts/agent-team-playbook/`、`artifacts/agent-team-playbook-en/`、`artifacts/agent-team-playbook-zh/` 各自的 `04-registry-naming/README(.md / _cn.md)` 注册表行 + `assets/team-diagram.svg` 团队图节点标签（「Markowitz · Victor」→「Mark · Victor」）。
+- **边界**：`artifacts/` 为 .gitignore 忽略的本机内容（按设计不入 git）——未重打交付 zip、未动版本号与上架侧（Payloadz 在售副本与本地 zip 内嵌内容仍为旧名）；如需买家端同步，另行走一次产品修订（重打包 → Vendy 重传）。本条记录随本仓 CHANGELOG 提交。
+
 ### 变更（2026-10-17 规则修订：子项目改挂「Agent 进驻」软链；本项目新增 AGENTS.md 软链）
 
 - **为什么改**：用户 2026-10-17 修订团队规则（全局 `~/.claude/CLAUDE.md` 与注册表「智能体专属文件归属与子项目映射（2026-10-17 修订）」节），取代 2026-10-12 的「子项目一律不得存在」口径——智能体专属文件（`CLAUDE.md` / `AGENTS.md` / `.claude/` / 项目级 `.pi/`）实体仍只属 Agent 项目，但子项目根目录改挂两条指回负责 Agent 的软链接（`AGENTS.md → ../<负责Agent项目>/AGENTS.md`、`.pi → ../<负责Agent项目>/.pi`，随仓库提交），在子项目目录开会话即继承负责 Agent 的身份 / 规则 / 技能（「Agent 进驻子项目」）；后台开启 pi 会话仍只能以 Agent 项目根为工作目录；`.claude/` 不纳入此网络、不再维护。
