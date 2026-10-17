@@ -79,7 +79,7 @@
 
 ## 子项目清单
 
-暂无子项目。按 2026-10-12 新规：智能体专属文件（`CLAUDE.md` / `AGENTS.md` / `.claude/` / 项目级 `.pi/`）只有 Agent 项目允许拥有，非 Agent 项目（含子项目）一律不得存在；后台开启 pi 会话（intercom / `agent_call` / `agent_wake`）只能以本项目根为工作目录，子项目的工作在本项目会话里按路径跨目录操作（细则见全局 `~/.claude/docs/agents-registry.md`「智能体专属文件归属与子项目映射（2026-10-12 修订）」节）。
+暂无子项目。子项目归属规则见全局 `~/.claude/docs/agents-registry.md`「智能体专属文件归属与子项目映射」节（2026-10-17 修订）：智能体专属文件的实体只在 Agent 项目；子项目根目录挂 `AGENTS.md` / `.pi` 两条指回负责 Agent 的软链接（随仓库提交），在子项目目录开会话即继承负责 Agent 的身份与规则；后台开启 pi 会话（intercom / `agent_call` / `agent_wake`）仍只能以本项目根为工作目录，子项目的工作在本项目会话里按路径跨目录操作。
 
 ## 你在流水线中的位置
 
