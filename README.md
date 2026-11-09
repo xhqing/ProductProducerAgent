@@ -42,7 +42,7 @@ Passive-income products only (no courses / services / agency work); intermediate
 
 ## License & Attribution
 
-- Copyright (c) 2026 xhqing <https://github.com/xhqing>. Licensed under [MIT](LICENSE.md).
+- Copyright (c) 2026 xhqing and contributors. Licensed under [MIT](LICENSE.md).
 - When referencing this project, please keep the copyright notice and cite the source.
 - Project URL: <https://github.com/xhqing/ProductProducerAgent>
 
