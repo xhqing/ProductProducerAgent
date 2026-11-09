@@ -38,6 +38,6 @@
 
 ## 版权与署名
 
-- 版权所有 `Copyright (c) 2026 xhqing <https://github.com/xhqing>`，许可证为 [MIT](LICENSE.md)。
+- 版权所有 `Copyright (c) 2026 xhqing and contributors`，许可证为 [MIT](LICENSE.md)。
 - 引用本项目时，请保留版权声明并注明来源。
 - 项目地址：<https://github.com/xhqing/ProductProducerAgent>
